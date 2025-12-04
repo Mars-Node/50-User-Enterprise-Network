@@ -165,5 +165,15 @@ http://10.10.10.2
 - Add a second switch to simulate multi-floor office distribution  
 - Build an Ansible playbook to automate switch and router provisioning  
 - Convert Packet Tracer lab to GNS3 or CML for more realism  
-- Add monitoring (SNMP, syslog) for network visibility  
+- Add monitoring (SNMP, syslog) for network visibility
+
+- ---
+
+## 📬 Contact
+If you’d like to connect or discuss this project:
+
+**LinkedIn:** https://www.linkedin.com/in/imani-marsden-134b0678/  
+**GitHub:** https://github.com/Mars-Node
+
+
 
