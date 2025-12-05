@@ -35,7 +35,8 @@ Although only a few hosts are physically shown for demonstration, the VLAN archi
 
 ## 🗺️ **Logical Network Diagram**
 
-![Network Topology](screenshots/SOHO-topology.png)
+![Network Topology](screenshots/SOHO-Topology.png)
+
 **Full Packet Tracer topology showing router, switch, VLANs, and host layout.**
 
 
@@ -57,6 +58,7 @@ Each subnet supports **254 users**, far surpassing typical small-business needs.
 ### 📸 Switch Configuration Screenshot
 
 ![Switch Config](screenshots/Switch-config.png)
+
 **Full running configuration of the Cisco 3560 switch showing VLANs, access ports, and trunking.**
 
 
@@ -122,6 +124,7 @@ ip route 0.0.0.0 0.0.0.0 10.10.10.2
 **Inter-VLAN Routing**
 
 ![Inter-VLAN Ping](screenshots/Ping-tests.png)
+
 *PC in VLAN 20 successfully pinging gateway and host in VLAN 10, confirming inter-VLAN routing.*
 From PC1 (192.168.20.11):
 ```
