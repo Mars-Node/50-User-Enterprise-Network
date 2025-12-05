@@ -35,7 +35,9 @@ Although only a few hosts are physically shown for demonstration, the VLAN archi
 
 ## 🗺️ **Logical Network Diagram**
 
-> *(Include your draw.io / PNG diagram here — name it `topology.png`.)*
+![Network Topology](screenshots/topology.png)
+**Full Packet Tracer topology showing router, switch, VLANs, and host layout.**
+
 
 ---
 
@@ -52,6 +54,11 @@ Each subnet supports **254 users**, far surpassing typical small-business needs.
 ---
 
 ## 🔌 **Switch Configuration Summary**
+### 📸 Switch Configuration Screenshot
+
+![Switch Config](screenshots/switch-config.png)
+**Full running configuration of the Cisco 3560 switch showing VLANs, access ports, and trunking.**
+
 
 ```bash
 vlan 10
@@ -77,6 +84,11 @@ interface fa0/1
 ---
 
 ## 🚦 **Router Configuration (Router-on-a-Stick + NAT)**
+### 📸 Router Configuration Screenshot
+
+![Router Config](screenshots/router-config.png)
+**Complete Cisco 2811 router configuration including dot1q subinterfaces, NAT overload, and routing.**
+
 ```bash
 interface fa0/0
  no shut
@@ -107,44 +119,51 @@ ip route 0.0.0.0 0.0.0.0 10.10.10.2
 ---
 
 ## 🧪 **Testing & Validation**
-**1. Inter-VLAN Routing**
+**Inter-VLAN Routing**
+
+![Inter-VLAN Ping](screenshots/ping-tests.png)
+*PC in VLAN 20 successfully pinging gateway and host in VLAN 10, confirming inter-VLAN routing.*
 From PC1 (192.168.20.11):
 ```
 ping 192.168.20.1   # Router gateway
 ping 192.168.10.11  # PC0 in VLAN 10
 ```
-**2. Router Reachability**
-From Router:
-```
-ping 192.168.20.11
-ping 192.168.10.11
-```
-**3. NAT + Internet Simulation**
-Server at 10.10.10.2 acts as external web server.
-From PC1:
+**Router Subinterfaces**
+
+![Router Subinterfaces](screenshots/router-subinterfaces.png)
+*Router subinterfaces Fa0/0.10 and Fa0/0.20 configured with correct dot1q tagging and gateway IPs.*
+
+**Switch Trunk Status**
+
+![Trunk Status](screenshots/trunk-status.png)
+*Switch trunk interface Fa0/1 actively forwarding VLANs 10 and 20 using 802.1Q encapsulation.*
+
+**NAT + Internet Simulation**
+
+**Ping Test**
+
+![Internet Ping](screenshots/internet-test1.png)  
+*PC successfully pinging simulated internet server (10.10.10.2).*
+
+
 ```
 ping 10.10.10.2
 ```
-Browser test:
+
+**Browser Test**
+
+![Internet Browser](screenshots/internet-test2.png)  
+*PC successfully reaching simulated internet server (10.10.10.2) via NAT overload.*
+
+
 ```
 http://10.10.10.2
 ```
+**Mac address table**
+![MAC Table](screenshots/mac-table.png)
+*Switch dynamically learning MAC addresses across VLANs, confirming correct Layer 2 operation.*
+
 ---
-
-## **📁 Repository Structure**
-
-/
-├── small-business-network.pkt       # Packet Tracer project file
-├── router-config.txt                # Exported router config
-├── switch-config.txt                # Exported switch config
-├── network_diagram.drawio           # Editable diagram
-├── pc-ip-plan.md                    # Documented addressing scheme
-└── screenshots/
-     ├── topology.png
-     ├── ping-tests.png
-     ├── trunk-status.png
-     ├── router-subinterfaces.png
-     └── http-server-test.png
 
 ## 📘 Lessons Learned
 
