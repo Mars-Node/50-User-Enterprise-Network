@@ -35,7 +35,7 @@ Although only a few hosts are physically shown for demonstration, the VLAN archi
 
 ## 🗺️ **Logical Network Diagram**
 
-![Network Topology](screenshots/topology.png)
+![Network Topology](screenshots/SOHO-topology.png)
 **Full Packet Tracer topology showing router, switch, VLANs, and host layout.**
 
 
@@ -56,7 +56,7 @@ Each subnet supports **254 users**, far surpassing typical small-business needs.
 ## 🔌 **Switch Configuration Summary**
 ### 📸 Switch Configuration Screenshot
 
-![Switch Config](screenshots/switch-config.png)
+![Switch Config](screenshots/Switch-config.png)
 **Full running configuration of the Cisco 3560 switch showing VLANs, access ports, and trunking.**
 
 
@@ -86,7 +86,7 @@ interface fa0/1
 ## 🚦 **Router Configuration (Router-on-a-Stick + NAT)**
 ### 📸 Router Configuration Screenshot
 
-![Router Config](screenshots/router-config.png)
+![Router Config](screenshots/Router-config.png)
 **Complete Cisco 2811 router configuration including dot1q subinterfaces, NAT overload, and routing.**
 
 ```bash
@@ -121,7 +121,7 @@ ip route 0.0.0.0 0.0.0.0 10.10.10.2
 ## 🧪 **Testing & Validation**
 **Inter-VLAN Routing**
 
-![Inter-VLAN Ping](screenshots/ping-tests.png)
+![Inter-VLAN Ping](screenshots/Ping-tests.png)
 *PC in VLAN 20 successfully pinging gateway and host in VLAN 10, confirming inter-VLAN routing.*
 From PC1 (192.168.20.11):
 ```
@@ -160,7 +160,7 @@ ping 10.10.10.2
 http://10.10.10.2
 ```
 **Mac address table**
-![MAC Table](screenshots/mac-table.png)
+![MAC Table](screenshots/Mac-table.png)
 *Switch dynamically learning MAC addresses across VLANs, confirming correct Layer 2 operation.*
 
 ---
